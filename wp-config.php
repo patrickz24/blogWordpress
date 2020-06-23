@@ -55,6 +55,9 @@ define( 'SECURE_AUTH_SALT', 'b95def8902c8b94d0ba99380346d4da25d3d216b');
 define( 'LOGGED_IN_SALT',   '1c2ea9bd9ea0728923c23f802f6de03584e2dc34');
 define( 'NONCE_SALT',       'db520c3c7fa265c20a74ca2d077773b3018e8d74');
 
+define('JWT_AUTH_SECRET_KEY', 'secret');
+define('JWT_AUTH_CORS_ENABLE', true);
+
 /**#@-*/
 
 /**
