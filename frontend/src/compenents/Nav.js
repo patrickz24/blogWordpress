@@ -7,7 +7,6 @@ import {
 export default function Nav() {
   return (
     <Fragment>
-
       <nav>
         <ul>
           <li>
@@ -17,7 +16,7 @@ export default function Nav() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/posts/:id">Post</Link>
+            <Link to="/posts">Post</Link>
           </li>
         </ul>
       </nav>
