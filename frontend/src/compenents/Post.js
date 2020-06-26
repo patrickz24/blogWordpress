@@ -1,12 +1,12 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 
 export default function Post() {
 
-    const [posts, setPosts] = useState([]);
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
+    const [posts, setPosts] = useState();
+    // const [title, setTitle] = useState("");
+    // const [content, setContent] = useState("");
 
     const { id } = useParams();
 
@@ -17,22 +17,21 @@ export default function Post() {
             );
             console.log("je suis le result", result.data)
             setPosts(result.data);
-            setTitle(result.data.title.rendered);
-            setContent(result.data.content.rendered);
+            // setTitle(result.data.title.rendered);
+            // setContent(result.data.content.rendered);
 
         };
 
         fetchData();
-    }, []);
+    }, [id]);
 
-    console.log("Je suis le post", posts)
+    // console.log("Je suis le post", posts)
+    return (posts ? (<div> <h1>{posts.title.rendered}</h1> </div>) : <h1>hello</h1>
 
-    return (
-        <div>
-            <Fragment>
-                <h1>{title}</h1>
-                <p dangerouslySetInnerHTML={{ __html: content }} />
-            </Fragment>
-        </div>
-    )
+    );
+
 }
+
+
+
+

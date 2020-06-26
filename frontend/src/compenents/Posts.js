@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Posts() {
     const [posts, setPosts] = useState([]);
@@ -23,7 +24,7 @@ export default function Posts() {
                 <Fragment>
                     <h1 key={post.id}>{post.title.rendered}</h1>
                     <p dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-                    <a href={`/posts/${post.id}`}>View Book </a>
+                    <Link to={`/posts/${post.id}`}>View Book </Link>
                 </Fragment>
             ))
             }
